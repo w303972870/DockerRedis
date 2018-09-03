@@ -28,7 +28,7 @@ if [ "$START" == "redis" ]; then
 else
     sed -i "s/\$SENTINEL_LISTION_SERVER_NAME/$SENTINEL_LISTION_SERVER_NAME/g" /data/redis/sentinel.conf
 	sed -i "s/\$SENTINEL_LISTION_SERVER_IP/$SENTINEL_LISTION_SERVER_IP/g" /data/redis/sentinel.conf
-	sed -i "s/\$SENTINEL_LISTION_SERVER_IP_PORT/$SENTINEL_LISTION_SERVER_IP_PORT/g" /data/redis/sentinel.conf
+	sed -i "s/\$SENTINEL_LISTION_SERVER_PORT/$SENTINEL_LISTION_SERVER_PORT/g" /data/redis/sentinel.conf
 	sed -i "s/\$SENTINEL_QUORUM/$SENTINEL_QUORUM/g" /data/redis/sentinel.conf
 	sed -i "s/\$SENTINEL_DOWN_AFTER/$SENTINEL_DOWN_AFTER/g" /data/redis/sentinel.conf
 	sed -i "s/\$SENTINEL_FAILOVER/$SENTINEL_FAILOVER/g" /data/redis/sentinel.conf

@@ -29,7 +29,7 @@ docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ -e START=redi
 ||||
 |SENTINEL_LISTION_SERVER_NAME|默认等于master|sentinel专用选项：用于配置sentinel monitor监听主机别名|
 |SENTINEL_LISTION_SERVER_IP|默认等于master|sentinel专用选项：用于配置sentinel monitor监听主机ip|
-|SENTINEL_LISTION_SERVER_IP_PORT|默认等于6379|sentinel专用选项：用于配置sentinel monitor监听主机端口|
+|SENTINEL_LISTION_SERVER_PORT|默认等于6379|sentinel专用选项：用于配置sentinel monitor监听主机端口|
 |SENTINEL_QUORUM|默认等于2|sentinel专用选项：用于配置sentinel monitor，多少个进程认为不可用即弃用|
 |SENTINEL_DOWN_AFTER|默认1000|sentinel专用选项：sentinel down-after-milliseconds PONG监测响应时间范围|
 |SENTINEL_FAILOVER|默认1000|sentinel专用选项：用于配置sentinel failover-timeout|
