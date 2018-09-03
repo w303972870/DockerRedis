@@ -13,7 +13,8 @@ docker run -d --name redis-02 -p 6372:6370 registry.cn-hangzhou.aliyuncs.com/ser
 docker run -d --name redis-03 -p 6373:6370 registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
 docker run -d --name redis-04 -p 6374:6370 -e REDIS_PASSWORD=123456 registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
 docker run -d --name redis-05 -e LISTION=SOCK -e REDIS_PASSWORD=123456 registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
-docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ -e START=redis -e REDIS_PORT=6370 -e LISTION=IP --privileged registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
+docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ -e START=redis -e REDIS_PORT=6370 -e LISTION=IP  --privileged  redis
+docker run -dit -p 26379:26379 -v /data/redis/logs:/data/redis/logs/ -e START=sentinel -e SENTINEL_LISTION_SERVER_NAME=master -e SENTINEL_LISTION_SERVER_IP=127.0.0.1 -e SENTINEL_LISTION_SERVER_PORT=6370 -e SENTINEL_QUORUM=2  --privileged  redis
 ```
 
 #### -e参数列表
