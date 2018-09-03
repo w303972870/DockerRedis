@@ -12,8 +12,8 @@ docker run -d --name redis-05 -e LISTION=SOCK -e REDIS_PASSWORD=123456 registry.
 ```
 
 #### -e参数列表
-
-
+|选项|默认值|说明|
+|:---|:---|:---|
 |START|默认等于redis|意思启动的是redis服务|
 |REDIS_PORT|默认6370|设置redis的访问端口|
 |LISTION|默认等于IP|设置redis的监听方式，默认IP意思是通过ip链接，否则就通过sock方式，默认sock文件/data/redis/redis.sock|
