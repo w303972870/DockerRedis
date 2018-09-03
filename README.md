@@ -1,3 +1,7 @@
+```
+docker pull registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
+```
+
 ### 日志目录
 ```
 /data/redis/logs/
