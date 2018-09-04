@@ -27,7 +27,7 @@ docker run -dit -p 26379:26379 -v /data/redis/logs:/data/redis/logs/ -e START=se
 |REDIS_SLAVEOF_IP|默认0|0意思是不设置，用于配置当前redis的slaveof ip|
 |REDIS_SLAVEOF_PORT|默认0|0意思是不设置，用于配置当前redis的slaveof port |
 |REDIS_BIND_IP|默认0.0.0.0|用于配置redis.conf中的bind项| 
-|PROTECTED_MODE|默认no|用于配置redis.conf中的protected-mode项| 
+|PROTECTED_MODE|默认no|用于配置redis.conf中的protected-mode项，开启赋值yes| 
 ||||
 |SENTINEL_LISTION_SERVER_NAME|默认等于master|sentinel专用选项：用于配置sentinel monitor监听主机别名|
 |SENTINEL_LISTION_SERVER_IP|默认等于master|sentinel专用选项：用于配置sentinel monitor监听主机ip|
