@@ -16,7 +16,6 @@ docker pull registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
 #### 启动命令示例
 **在本机测试需要指定--net网络，同时同一net网络下端口不要相同**
 ```
-docker run -d --name redis-01 -p 6371:6370 registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
 docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6370 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
 docker run -dit -p 6371:6371 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6371 -e REDIS_SLAVEOF_IP=192.168.12.2 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
 docker run -dit -p 6372:6372 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6372 -e REDIS_SLAVEOF_IP=192.168.12.2 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
