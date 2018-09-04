@@ -17,12 +17,12 @@ if [ "$START" == "redis" ]; then
         sed -i "s/\# requirepass foobared/requirepass $REDIS_REQUIREPASS/g" /etc/redis.conf ;
     fi
     if [ "$REDIS_MASTERAUTH" != "0" ]; then
-        sed -i "s/\# masterauth \<master-password\>/masterauth $REDIS_MASTERAUTH/g" /etc/redis.conf ;
+        sed -i "s/# masterauth <master-password>/masterauth $REDIS_MASTERAUTH/g" /etc/redis.conf ;
     fi
     
     if [ "$REDIS_SLAVEOF_IP" != "0" ]; then
         if [ "$REDIS_SLAVEOF_PORT" != "0" ]; then
-            sed -i "s/\# slaveof \<masterip\> \<masterport\>/slaveof $REDIS_SLAVEOF_IP $REDIS_SLAVEOF_PORT/g" /etc/redis.conf ;
+            sed -i "s/# slaveof <masterip> <masterport>/slaveof $REDIS_SLAVEOF_IP $REDIS_SLAVEOF_PORT/g" /etc/redis.conf ;
         fi
     fi
     redis-server /etc/redis.conf
