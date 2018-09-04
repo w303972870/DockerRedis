@@ -6,6 +6,13 @@ docker pull registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
 ```
 /data/redis/logs/
 ```
+
+### 默认配置文件
+```
+/etc/redis.conf
+/data/redis/sentinel.conf
+```
+
 #### 启动命令示例
 ```
 docker run -d --name redis-01 -p 6371:6370 registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
@@ -20,7 +27,7 @@ docker run -dit -p 26379:26379 -v /data/redis/logs:/data/redis/logs/ -e START=se
 #### -e参数列表
 |选项|默认值|说明|
 |:---|:---|:---|
-|START|默认等于redis|意思启动的是redis服务|
+|START|默认等于redis|意思启动的是redis服务模式，sentinel启动的是哨兵模式|
 |REDIS_PORT|默认6370|设置redis的访问端口|
 |LISTION|默认等于IP|设置redis的监听方式，默认IP意思是通过ip链接，否则就通过sock方式，默认sock文件/data/redis/redis.sock|
 |REDIS_REQUIREPASS|默认0|0意思是不设置,设置redis的访问密码，当启动sentinel，这就是配置sentinel访问master的密码|
