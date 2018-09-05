@@ -29,11 +29,13 @@ docker run -dit -p 6372:6372 -v /data/redis/logs:/data/redis/logs/ --net host -e
 docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6370 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
 docker run -dit -p 6371:6371 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6371 -e REDIS_SLAVEOF_IP=192.168.12.3 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
 docker run -dit -p 6372:6372 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6372 -e REDIS_SLAVEOF_IP=192.168.12.4 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
-docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ -e START=redis -e REDIS_PORT=6370 -e REDIS_REQUIREPASS=123456 -e LISTION=IP  --privileged  redis
-docker run -dit -p 26379:26379 -v /data/redis/logs:/data/redis/logs/ -e START=sentinel -e SENTINEL_LISTION_SERVER_NAME=master -e REDIS_REQUIREPASS=123456 -e SENTINEL_LISTION_SERVER_IP=127.0.0.1 -e SENTINEL_LISTION_SERVER_PORT=6370 -e SENTINEL_QUORUM=2  --privileged  redis
 ```
 
-#### -e参数列表
+```
+docker run -dit -p 26379:26379 -v /data/redis/logs:/data/redis/logs/ --net host -e START=sentinel --privileged -v /data/redis/sentinel.conf:/data/redis/sentinel.conf  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
+```
+
+#### -e参数列表,如果通过-v指定配置文件，以下参数设置将都会失效
 |选项|默认值|说明|
 |:---|:---|:---|
 |START|默认等于redis|意思启动的是redis服务模式，sentinel启动的是哨兵模式|
@@ -45,6 +47,7 @@ docker run -dit -p 26379:26379 -v /data/redis/logs:/data/redis/logs/ -e START=se
 |REDIS_MASTERAUTH|默认0|0意思是不设置，用于配置当前redis的slaveof 主机的密码 |
 |REDIS_BIND_IP|默认0.0.0.0|用于配置redis.conf中的bind项| 
 |PROTECTED_MODE|默认no|用于配置redis.conf中的protected-mode项，开启赋值yes| 
+||||
 ||||
 |SENTINEL_LISTION_SERVER_NAME|默认等于master|sentinel专用选项：用于配置sentinel monitor监听主机别名|
 |SENTINEL_LISTION_SERVER_IP|默认等于master|sentinel专用选项：用于配置sentinel monitor监听主机ip|
