@@ -4,9 +4,11 @@ MAINTAINER Eric Wang <wdc-zhy@163.com>
 ENV START=redis LISTION=IP SENTINEL_LISTION_SERVER_NAME=master SENTINEL_LISTION_SERVER_IP=master \
     SENTINEL_LISTION_SERVER_IP_PORT=6379 SENTINEL_QUORUM=2 SENTINEL_DOWN_AFTER=1000 \
     SENTINEL_FAILOVER=1000 REDIS_PORT=6370 REDIS_REQUIREPASS=0 REDIS_MASTERAUTH=0 \
-    REDIS_SLAVEOF_IP=0  REDIS_SLAVEOF_PORT=0 REDIS_BIND_IP=0.0.0.0 PROTECTED_MODE=no
+    REDIS_SLAVEOF_IP=0  REDIS_SLAVEOF_PORT=0 REDIS_BIND_IP=0.0.0.0 PROTECTED_MODE=no 
 
-RUN apk update && apk add redis
+RUN apk update && apk add redis && apk add tzdata && \
+  cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+  echo "Asia/Shanghai" > /etc/timezone && rm -rf /var/cache/apk/*
 
 RUN mkdir -p /data/redis/logs
 WORKDIR /data/redis
