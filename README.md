@@ -1,5 +1,5 @@
 ```
-docker pull registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
+docker pull w303972870/redis
 ```
 
 ### 日志目录
