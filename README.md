@@ -16,23 +16,23 @@ docker pull w303972870/redis
 #### 启动命令示例
 **在本机测试需要指定--net网络，同时同一net网络下端口不要相同**
 ```
-docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6370 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
-docker run -dit -p 6371:6371 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6371 -e REDIS_SLAVEOF_IP=192.168.12.2 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
-docker run -dit -p 6372:6372 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6372 -e REDIS_SLAVEOF_IP=192.168.12.2 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
+docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6370 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  docker.io/w303972870/redis
+docker run -dit -p 6371:6371 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6371 -e REDIS_SLAVEOF_IP=192.168.12.2 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  docker.io/w303972870/redis
+docker run -dit -p 6372:6372 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6372 -e REDIS_SLAVEOF_IP=192.168.12.2 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  docker.io/w303972870/redis
 ```
 ```
-docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6370 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
-docker run -dit -p 6371:6371 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6371 -e REDIS_SLAVEOF_IP=192.168.12.3 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
-docker run -dit -p 6372:6372 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6372 -e REDIS_SLAVEOF_IP=192.168.12.4 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
+docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6370 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  docker.io/w303972870/redis
+docker run -dit -p 6371:6371 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6371 -e REDIS_SLAVEOF_IP=192.168.12.3 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  docker.io/w303972870/redis
+docker run -dit -p 6372:6372 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6372 -e REDIS_SLAVEOF_IP=192.168.12.4 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  docker.io/w303972870/redis
 ```
 ```
-docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6370 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
-docker run -dit -p 6371:6371 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6371 -e REDIS_SLAVEOF_IP=192.168.12.3 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
-docker run -dit -p 6372:6372 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6372 -e REDIS_SLAVEOF_IP=192.168.12.4 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
+docker run -dit -p 6370:6370 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6370 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  docker.io/w303972870/redis
+docker run -dit -p 6371:6371 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6371 -e REDIS_SLAVEOF_IP=192.168.12.3 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  docker.io/w303972870/redis
+docker run -dit -p 6372:6372 -v /data/redis/logs:/data/redis/logs/ --net host -e START=redis -e REDIS_PORT=6372 -e REDIS_SLAVEOF_IP=192.168.12.4 -e REDIS_SLAVEOF_PORT=6370 -e REDIS_MASTERAUTH=123456 -e REDIS_REQUIREPASS=123456 -e LISTION=IP --privileged  docker.io/w303972870/redis
 ```
 
 ```
-docker run -dit -p 26379:26379 -v /data/redis/logs:/data/redis/logs/ --net host -e START=sentinel --privileged -v /data/redis/sentinel.conf:/data/redis/sentinel.conf  registry.cn-hangzhou.aliyuncs.com/server_repertory/redis:latest
+docker run -dit -p 26379:26379 -v /data/redis/logs:/data/redis/logs/ --net host -e START=sentinel --privileged -v /data/redis/sentinel.conf:/data/redis/sentinel.conf  docker.io/w303972870/redis
 ```
 
 #### -e参数列表,如果通过-v指定配置文件，以下参数设置将都会失效
